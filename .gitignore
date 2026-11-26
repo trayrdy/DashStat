@@ -1,0 +1,36 @@
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+.clangd/
+compile_commands.json
+
+# Build outputs & caches
+*.o
+*.a
+*.elf
+*.bin
+*.hex
+build/
+
+# VS Code & IDEs
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*~
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Scratch and debug dumps
+scratch/
+
+# Local AI agent rules & skills
+.agents/
+
+

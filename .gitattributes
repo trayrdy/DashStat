@@ -1,0 +1,11 @@
+# GitHub Linguist configuration for accurate repository language statistics
+# Exclude auto-generated LVGL font bitmaps and PCM audio arrays from language stats
+src/ui/fonts/*.c linguist-generated=true
+include/ui/fonts/*.h linguist-generated=true
+include/hal/sound_data.h linguist-generated=true
+
+# Mark third-party LVGL config template as vendored
+include/lv_conf.h linguist-vendored=true
+
+# Classify project C++ headers as C++ rather than C
+*.h linguist-language=C++
