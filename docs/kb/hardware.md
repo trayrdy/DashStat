@@ -13,7 +13,7 @@
 | **SRAM ภายใน** | ~520 KB (Free Heap ตอนบูต ~320 KB) | มีจำกัด ต้องเฝ้าระวัง Heap Fragmentation อย่างเคร่งครัด |
 | **PSRAM** | **0 bytes (ไม่มี PSRAM)** | **กฎเหล็ก:** ห้ามใช้ Full Framebuffer เด็ดขาด บังคับใช้ Partial DMA Buffer |
 | **Core 0 Allocation** | BT Transport, CommandGuard, ELM327 Parser | รันการสื่อสารและตัวตรวจความปลอดภัยแยกจาก UI |
-| **Core 1 Allocation** | LVGL 9, LovyanGFX DMA, Touch Polling | รัน UI Rendering 60 FPS อิสระ ไม่ถูกบล็อกโดย I/O |
+| **Core 1 Allocation** | LVGL 9, LovyanGFX DMA, Touch Polling | รัน UI Rendering (~30 FPS) อิสระ ไม่ถูกบล็อกโดย I/O |
 
 ---
 

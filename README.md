@@ -7,7 +7,7 @@
 [![Platform](https://img.shields.io/badge/platform-ESP32_CYD_(2432S028R)-orange?style=flat-square)](docs/kb/hardware.md)
 [![Framework](https://img.shields.io/badge/framework-Arduino_%2B_LVGL_9_%2B_LovyanGFX-green?style=flat-square)](platformio.ini)
 
-DashStat turns an affordable **ESP32-2432S028R (Cheap Yellow Display / CYD)** into a responsive 60 FPS automotive digital dashboard and live OBD-II telemetry monitor over Bluetooth Low Energy (BLE) — built from the ground up with strict **ECU Read-Only safety** and zero-allocation memory discipline for PSRAM-less ESP32 boards.
+DashStat turns an affordable **ESP32-2432S028R (Cheap Yellow Display / CYD)** into a responsive automotive digital dashboard and live OBD-II telemetry monitor over Bluetooth Low Energy (BLE) — built from the ground up with strict **ECU Read-Only safety** and zero-allocation memory discipline for PSRAM-less ESP32 boards.
 
 ---
 
@@ -37,7 +37,7 @@ flowchart LR
 
     Parser -->|"Lock-Free Telemetry Sync"| State["Shared VehicleState"]
 
-    subgraph Core1["Core 1 — Display & HMI (60 FPS)"]
+    subgraph Core1["Core 1 — Display & HMI"]
         State --> UI["LVGL 9 Pages (Dash / Live / Trip / Diag / Settings)"]
         UI --> DMA["LovyanGFX HSPI DMA (2× Partial Buffers)"]
         Touch["XPT2046 Touch + LDR + Buzzer/LED"] --> UI
@@ -90,7 +90,7 @@ pio test -e native
 - **[User Manual (คู่มือการใช้งานภาษาไทย)](docs/USER_MANUAL.md)** — Full setup guide, screen walkthroughs, settings, and Universal 24-PID reference
 - **[ECU Read-Only Safety Specification](docs/kb/ecu_safety.md)** — 3-tier CommandGuard whitelist & blacklist policy
 - **[Hardware Pinout & CYD Specs](docs/kb/hardware.md)** — Complete GPIO mapping and BLE adapter details
-- **[LVGL 9 & 60 FPS Memory Notes](docs/kb/lvgl_notes.md)** — Partial DMA buffering without PSRAM
+- **[LVGL 9 & DMA Memory Notes](docs/kb/lvgl_notes.md)** — Partial DMA buffering without PSRAM
 - **[OBD-II PIDs & Low-Latency Tuning](docs/kb/obd2_pids.md)** — Multi-PID requests and zero-allocation parsing
 
 ---
