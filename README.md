@@ -14,7 +14,7 @@ DashStat turns an affordable **ESP32-2432S028R (Cheap Yellow Display / CYD)** in
 ## ✨ Key Features
 
 - **100% ECU Read-Only Safety (`CommandGuard`):** Strict kernel-level whitelist only permits read-only OBD-II queries (`Mode 01`, `03`, `07`, `09`) and safe ELM327 `AT` commands. Destructive commands (`Mode 04/14` Clear DTC, actuator tests, UDS writes/resets) are permanently blocked and verified by unit tests.
-- **Smooth 60 FPS UI without PSRAM:** Powered by **LVGL 9** and **LovyanGFX** (HSPI DMA with 2× partial buffers, ~20.48 KB SRAM) and backlight-blanked page transitions to eliminate screen tearing.
+- **Smooth UI without PSRAM:** Powered by **LVGL 9** and **LovyanGFX** (HSPI DMA with 2× partial buffers, ~20.48 KB SRAM) and backlight-blanked page transitions to eliminate screen tearing.
 - **Low-Latency BLE OBD-II Engine:** Built on **NimBLE-Arduino** with `7.5ms` connection interval tuning, `ATAT2` adaptive timing, CAN response count hints, and non-blocking exponential backoff reconnect. Supports `0xFFF0`, `0xFFE0`, and Nordic UART (`vLinker MC+`, `OBDLink CX`, standard BLE ELM327 adapters).
 - **Universal 24-PID Catalog:** 3 organized groups (Engine & Thermal, Air/Fuel/O2, Volt/Pedal/Diag) assignable to **4 Dashboard tiles** and **6 Live matrix slots**, including virtual **Turbo Boost (`MAP - BARO`)**.
 - **100ms Live Waveform Chart:** Real-time oscilloscope-style telemetry plotting with live min/avg/max tracking.
@@ -97,7 +97,7 @@ pio test -e native
 
 ## 🇹🇭 ภาพรวมภาษาไทย (Thai Summary)
 
-**DashStat** คือโปรเจกต์เกจวัดดิจิทัลและจอแสดงผลข้อมูลรถยนต์แบบเรียลไทม์ผ่านพอร์ต OBD-II (Bluetooth Low Energy) สำหรับบอร์ด **ESP32 CYD (2.8" 320×240 Touchscreen)** ออกแบบให้ทำงานลื่นไหลระดับ 60 FPS บนบอร์ดที่ไม่มี PSRAM พร้อมความปลอดภัยสูงสุด:
+**DashStat** คือโปรเจกต์เกจวัดดิจิทัลและจอแสดงผลข้อมูลรถยนต์แบบเรียลไทม์ผ่านพอร์ต OBD-II (Bluetooth Low Energy) สำหรับบอร์ด **ESP32 CYD (2.8" 320×240 Touchscreen)** ออกแบบให้ทำงานลื่นไหล บนบอร์ดที่ไม่มี PSRAM พร้อมความปลอดภัยสูงสุด:
 
 * **ปลอดภัยต่อกล่อง ECU 100% (Read-Only):** ระบบ `CommandGuard` อนุญาตเฉพาะคำสั่งอ่านค่า (`Mode 01/03/07/09`) เท่านั้น บล็อกคำสั่งลบโค้ด (`Mode 04`) หรือเขียนทับค่า ECU ถาวร
 * **อ่านค่าไว หน่วงต่ำ:** รองรับ Multi-PID, Response Count Hint, การเชื่อมต่อ BLE `7.5ms` และกราฟคลื่นสดทุกๆ 100ms
